@@ -33,9 +33,14 @@ const store = (function(){
       shoppingList.render();
     } catch(e){console.log(`Cannot update name: ${e.message}`);}
   };
+  let findAndDelete = function(id) {
+    this.items = this.items.filter(item => item!== findById(id));
+    shoppingList.render();
+  };
   return {items,
     hideCheckedItems,
-    searchTerm, findById, addItem, findAndToggleChecked, findAndUpdateName};
+    searchTerm, findById, addItem, findAndToggleChecked, findAndUpdateName,
+    findAndDelete};
 }());
 
 
