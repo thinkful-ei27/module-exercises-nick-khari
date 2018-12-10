@@ -4,11 +4,20 @@ const Item = (function(){
   return {};
 }());
 
-function validateName (name) {
+function validateName(name) {
     try{
         if(name === '' || name === undefined){
           throw new Error;
         }
-    } catch(error){alert('That is the wrong input');}
-    
+    } catch(error){alert('Name does not exist');}
 }
+
+function create(name) {
+    let obj = {id: cuid(),
+    name: name,
+    checked: false
+  };
+    return obj;
+}
+
+console.log(create('Bilbo Baggins'));
