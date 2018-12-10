@@ -37,10 +37,18 @@ const store = (function(){
     this.items = this.items.filter(item => item!== findById(id));
     shoppingList.render();
   };
+
+  let toggleCheckedFilter = function(){
+    this.hideCheckedItems = !this.hideCheckedItems;
+  };
+  let setSearchTerm = function(search){
+    this.searchTerm = search;
+  };
+
   return {items,
     hideCheckedItems,
     searchTerm, findById, addItem, findAndToggleChecked, findAndUpdateName,
-    findAndDelete};
+    findAndDelete, toggleCheckedFilter, setSearchTerm};
 }());
 
 
